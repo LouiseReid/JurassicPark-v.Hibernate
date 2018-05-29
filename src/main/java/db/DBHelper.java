@@ -1,5 +1,8 @@
 package db;
 
+import models.Dinosaur;
+import models.DynoType;
+import models.Paddock;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -92,5 +95,48 @@ public class DBHelper {
             session.close();
         }
         return result;
+    }
+
+    public static List<Paddock> allPaddockofType(DynoType dynoType){
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Paddock> results = null;
+        try {
+            transaction = session.beginTransaction();
+            Criteria cr = session.createCriteria(Paddock.class);
+            cr.add(Restrictions.eq("species", dynoType));
+            results = cr.list();
+            transaction.commit();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return results;
+    }
+
+    public static List<Dinosaur> allDinosaursofType(DynoType dinoType){
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Dinosaur> results = null;
+        try {
+            transaction = session.beginTransaction();
+            Criteria cr = session.createCriteria(Dinosaur.class);
+            cr.add(Restrictions.eq("species", dinoType));
+            results = cr.list();
+            transaction.commit();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return results;
+    }
+
+    public static void addDinoToPaddock(Dinosaur dinosaur, Paddock paddock){
+        paddock.addToPaddock(dinosaur);
+        dinosaur.setPaddock(paddock);
+        DBHelper.saveOrUpdate(dinosaur);
+        DBHelper.saveOrUpdate(paddock);
     }
 }

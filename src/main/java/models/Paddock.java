@@ -20,7 +20,7 @@ public class Paddock {
     private ArrayList<PaddockState> paddockStates;
     private PaddockState paddockState;
 
-    public Paddock(int id, String name, DynoType species, int dinoCapacity, int customerCapacity, int customerCount) {
+    public Paddock(String name, DynoType species, int dinoCapacity, int customerCapacity, int customerCount) {
         this.id = id;
         this.name = name;
         this.species = species;

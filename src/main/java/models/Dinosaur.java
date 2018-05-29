@@ -14,7 +14,7 @@ public class Dinosaur {
     private int hungerLevel;
 
 
-    public Dinosaur(int id, DynoType species, String name, Paddock paddock, int hungerLevel) {
+    public Dinosaur(DynoType species, String name, Paddock paddock, int hungerLevel) {
         this.id = id;
         this.species = species;
         this.name = name;
