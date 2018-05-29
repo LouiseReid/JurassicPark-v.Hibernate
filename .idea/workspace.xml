@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e262dfc6-ba95-4cc9-9d4a-1e6474930cc0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Dinosaur.java" afterPath="$PROJECT_DIR$/src/main/java/models/Dinosaur.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/db/DBHelper.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/db/HibernateUtil.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/Paddock.java" afterPath="$PROJECT_DIR$/src/main/java/models/Paddock.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -40,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dinosaur.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Dinosaur.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/models/Dinosaur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1496">
-              <caret line="88" column="9" lean-forward="true" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+            <state relative-caret-position="342">
+              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="79" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#663#664#0" expanded="true" />
@@ -74,53 +76,79 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Paddock.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/models/Paddock.java">
+      <file leaf-file-name="HibernateUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/db/HibernateUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="817">
-              <caret line="129" column="14" lean-forward="false" selection-start-line="129" selection-start-column="14" selection-end-line="129" selection-end-column="14" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/db/DBHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="88" column="35" lean-forward="true" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1030#1031#0" expanded="true" />
-                <element signature="e#1055#1056#0" expanded="true" />
-                <element signature="e#1088#1089#0" expanded="true" />
-                <element signature="e#1116#1117#0" expanded="true" />
-                <element signature="e#1174#1175#0" expanded="true" />
-                <element signature="e#1201#1202#0" expanded="true" />
-                <element signature="e#1241#1242#0" expanded="true" />
-                <element signature="e#1273#1274#0" expanded="true" />
-                <element signature="e#1339#1340#0" expanded="true" />
-                <element signature="e#1369#1370#0" expanded="true" />
-                <element signature="e#1417#1418#0" expanded="true" />
-                <element signature="e#1455#1456#0" expanded="true" />
-                <element signature="e#1518#1519#0" expanded="true" />
-                <element signature="e#1549#1550#0" expanded="true" />
-                <element signature="e#1594#1595#0" expanded="true" />
-                <element signature="e#1634#1635#0" expanded="true" />
-                <element signature="e#1708#1709#0" expanded="true" />
-                <element signature="e#1744#1745#0" expanded="true" />
-                <element signature="e#1799#1800#0" expanded="true" />
-                <element signature="e#1849#1850#0" expanded="true" />
-                <element signature="e#1960#1961#0" expanded="true" />
-                <element signature="e#1992#1993#0" expanded="true" />
-                <element signature="e#2055#2056#0" expanded="true" />
-                <element signature="e#2097#2098#0" expanded="true" />
-                <element signature="e#2178#2179#0" expanded="true" />
-                <element signature="e#2213#2214#0" expanded="true" />
-                <element signature="e#2275#2276#0" expanded="true" />
-                <element signature="e#2323#2324#0" expanded="true" />
-                <element signature="e#2395#2396#0" expanded="true" />
-                <element signature="e#2431#2432#0" expanded="true" />
-                <element signature="e#2506#2507#0" expanded="true" />
-                <element signature="e#2556#2557#0" expanded="true" />
-                <element signature="e#2599#2600#0" expanded="true" />
-                <element signature="e#2671#2672#0" expanded="true" />
-                <element signature="e#2704#2705#0" expanded="true" />
-                <element signature="e#2747#2748#0" expanded="true" />
-                <element signature="e#2800#2801#0" expanded="true" />
-                <element signature="e#2847#2848#0" expanded="true" />
-                <element signature="e#3196#3197#0" expanded="true" />
-                <element signature="e#3235#3236#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Paddock.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/models/Paddock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="446">
+              <caret line="184" column="56" lean-forward="false" selection-start-line="184" selection-start-column="56" selection-end-line="184" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1152#1153#0" expanded="true" />
+                <element signature="e#1177#1178#0" expanded="true" />
+                <element signature="e#1210#1211#0" expanded="true" />
+                <element signature="e#1238#1239#0" expanded="true" />
+                <element signature="e#1296#1297#0" expanded="true" />
+                <element signature="e#1323#1324#0" expanded="true" />
+                <element signature="e#1363#1364#0" expanded="true" />
+                <element signature="e#1395#1396#0" expanded="true" />
+                <element signature="e#1461#1462#0" expanded="true" />
+                <element signature="e#1491#1492#0" expanded="true" />
+                <element signature="e#1539#1540#0" expanded="true" />
+                <element signature="e#1577#1578#0" expanded="true" />
+                <element signature="e#1649#1650#0" expanded="true" />
+                <element signature="e#1684#1685#0" expanded="true" />
+                <element signature="e#1737#1738#0" expanded="true" />
+                <element signature="e#1785#1786#0" expanded="true" />
+                <element signature="e#1859#1860#0" expanded="true" />
+                <element signature="e#1895#1896#0" expanded="true" />
+                <element signature="e#1950#1951#0" expanded="true" />
+                <element signature="e#2000#2001#0" expanded="true" />
+                <element signature="e#2080#2081#0" expanded="true" />
+                <element signature="e#2119#2120#0" expanded="true" />
+                <element signature="e#2180#2181#0" expanded="true" />
+                <element signature="e#2236#2237#0" expanded="true" />
+                <element signature="e#2347#2348#0" expanded="true" />
+                <element signature="e#2379#2380#0" expanded="true" />
+                <element signature="e#2442#2443#0" expanded="true" />
+                <element signature="e#2484#2485#0" expanded="true" />
+                <element signature="e#2565#2566#0" expanded="true" />
+                <element signature="e#2600#2601#0" expanded="true" />
+                <element signature="e#2662#2663#0" expanded="true" />
+                <element signature="e#2710#2711#0" expanded="true" />
+                <element signature="e#2782#2783#0" expanded="true" />
+                <element signature="e#2818#2819#0" expanded="true" />
+                <element signature="e#2893#2894#0" expanded="true" />
+                <element signature="e#2943#2944#0" expanded="true" />
+                <element signature="e#2986#2987#0" expanded="true" />
+                <element signature="e#3058#3059#0" expanded="true" />
+                <element signature="e#3091#3092#0" expanded="true" />
+                <element signature="e#3134#3135#0" expanded="true" />
+                <element signature="e#3187#3188#0" expanded="true" />
+                <element signature="e#3234#3235#0" expanded="true" />
+                <element signature="e#3583#3584#0" expanded="true" />
+                <element signature="e#3622#3623#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,8 +183,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -175,8 +203,9 @@
         <option value="$PROJECT_DIR$/src/main/java/models/DynoType.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/PaddockState.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cgf.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/models/Paddock.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/Dinosaur.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/DBHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/models/Paddock.java" />
       </list>
     </option>
   </component>
@@ -243,6 +272,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JurassicPark" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JurassicPark" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -261,6 +298,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="xml.catalog" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="db" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -390,6 +432,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -400,7 +443,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -452,60 +494,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/Paddock.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/HibernateUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="129" column="14" lean-forward="false" selection-start-line="129" selection-start-column="14" selection-end-line="129" selection-end-column="14" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/DBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="88" column="35" lean-forward="true" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1030#1031#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1088#1089#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1174#1175#0" expanded="true" />
-            <element signature="e#1201#1202#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
-            <element signature="e#1273#1274#0" expanded="true" />
-            <element signature="e#1339#1340#0" expanded="true" />
-            <element signature="e#1369#1370#0" expanded="true" />
-            <element signature="e#1417#1418#0" expanded="true" />
-            <element signature="e#1455#1456#0" expanded="true" />
-            <element signature="e#1518#1519#0" expanded="true" />
-            <element signature="e#1549#1550#0" expanded="true" />
-            <element signature="e#1594#1595#0" expanded="true" />
-            <element signature="e#1634#1635#0" expanded="true" />
-            <element signature="e#1708#1709#0" expanded="true" />
-            <element signature="e#1744#1745#0" expanded="true" />
-            <element signature="e#1799#1800#0" expanded="true" />
-            <element signature="e#1849#1850#0" expanded="true" />
-            <element signature="e#1960#1961#0" expanded="true" />
-            <element signature="e#1992#1993#0" expanded="true" />
-            <element signature="e#2055#2056#0" expanded="true" />
-            <element signature="e#2097#2098#0" expanded="true" />
-            <element signature="e#2178#2179#0" expanded="true" />
-            <element signature="e#2213#2214#0" expanded="true" />
-            <element signature="e#2275#2276#0" expanded="true" />
-            <element signature="e#2323#2324#0" expanded="true" />
-            <element signature="e#2395#2396#0" expanded="true" />
-            <element signature="e#2431#2432#0" expanded="true" />
-            <element signature="e#2506#2507#0" expanded="true" />
-            <element signature="e#2556#2557#0" expanded="true" />
-            <element signature="e#2599#2600#0" expanded="true" />
-            <element signature="e#2671#2672#0" expanded="true" />
-            <element signature="e#2704#2705#0" expanded="true" />
-            <element signature="e#2747#2748#0" expanded="true" />
-            <element signature="e#2800#2801#0" expanded="true" />
-            <element signature="e#2847#2848#0" expanded="true" />
-            <element signature="e#3196#3197#0" expanded="true" />
-            <element signature="e#3235#3236#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/models/Dinosaur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="88" column="9" lean-forward="true" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+        <state relative-caret-position="342">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="79" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#663#664#0" expanded="true" />
@@ -530,6 +540,60 @@
             <element signature="e#1534#1535#0" expanded="true" />
             <element signature="e#1711#1712#0" expanded="true" />
             <element signature="e#1749#1750#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/Paddock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="184" column="56" lean-forward="false" selection-start-line="184" selection-start-column="56" selection-end-line="184" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1152#1153#0" expanded="true" />
+            <element signature="e#1177#1178#0" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
+            <element signature="e#1238#1239#0" expanded="true" />
+            <element signature="e#1296#1297#0" expanded="true" />
+            <element signature="e#1323#1324#0" expanded="true" />
+            <element signature="e#1363#1364#0" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1461#1462#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="e#1539#1540#0" expanded="true" />
+            <element signature="e#1577#1578#0" expanded="true" />
+            <element signature="e#1649#1650#0" expanded="true" />
+            <element signature="e#1684#1685#0" expanded="true" />
+            <element signature="e#1737#1738#0" expanded="true" />
+            <element signature="e#1785#1786#0" expanded="true" />
+            <element signature="e#1859#1860#0" expanded="true" />
+            <element signature="e#1895#1896#0" expanded="true" />
+            <element signature="e#1950#1951#0" expanded="true" />
+            <element signature="e#2000#2001#0" expanded="true" />
+            <element signature="e#2080#2081#0" expanded="true" />
+            <element signature="e#2119#2120#0" expanded="true" />
+            <element signature="e#2180#2181#0" expanded="true" />
+            <element signature="e#2236#2237#0" expanded="true" />
+            <element signature="e#2347#2348#0" expanded="true" />
+            <element signature="e#2379#2380#0" expanded="true" />
+            <element signature="e#2442#2443#0" expanded="true" />
+            <element signature="e#2484#2485#0" expanded="true" />
+            <element signature="e#2565#2566#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
+            <element signature="e#2662#2663#0" expanded="true" />
+            <element signature="e#2710#2711#0" expanded="true" />
+            <element signature="e#2782#2783#0" expanded="true" />
+            <element signature="e#2818#2819#0" expanded="true" />
+            <element signature="e#2893#2894#0" expanded="true" />
+            <element signature="e#2943#2944#0" expanded="true" />
+            <element signature="e#2986#2987#0" expanded="true" />
+            <element signature="e#3058#3059#0" expanded="true" />
+            <element signature="e#3091#3092#0" expanded="true" />
+            <element signature="e#3134#3135#0" expanded="true" />
+            <element signature="e#3187#3188#0" expanded="true" />
+            <element signature="e#3234#3235#0" expanded="true" />
+            <element signature="e#3583#3584#0" expanded="true" />
+            <element signature="e#3622#3623#0" expanded="true" />
           </folding>
         </state>
       </provider>

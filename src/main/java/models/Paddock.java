@@ -13,18 +13,20 @@ public class Paddock {
     private int id;
     private String name;
     private DynoType species;
-    private int capacity;
+    private int dinoCapacity;
     private int customerCount;
+    private int customerCapacity;
     private ArrayList<Dinosaur> dinosaurs;
     private ArrayList<PaddockState> paddockStates;
     private PaddockState paddockState;
 
-    public Paddock(int id, String name, DynoType species, int capacity, int customerCount) {
+    public Paddock(int id, String name, DynoType species, int dinoCapacity, int customerCapacity, int customerCount) {
         this.id = id;
         this.name = name;
         this.species = species;
-        this.capacity = capacity;
+        this.dinoCapacity = dinoCapacity;
         this.customerCount = customerCount;
+        this.customerCapacity = customerCapacity;
         paddockState = getState();
         dinosaurs = new ArrayList<>();
         paddockStates = new ArrayList<>();
@@ -63,13 +65,13 @@ public class Paddock {
         this.species = species;
     }
 
-    @Column(name = "capacity")
-    public int getCapacity() {
-        return capacity;
+    @Column(name = "dino_capacity")
+    public int getDinoCapacity() {
+        return dinoCapacity;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    public void setDinoCapacity(int dinoCapacity) {
+        this.dinoCapacity = dinoCapacity;
     }
 
     @Column(name = "customer_count")
@@ -79,6 +81,15 @@ public class Paddock {
 
     public void setCustomerCount(int customerCount) {
         this.customerCount = customerCount;
+    }
+
+    @Column(name = "customer_capacity")
+    public int getCustomerCapacity() {
+        return customerCapacity;
+    }
+
+    public void setCustomerCapacity(int customerCapacity) {
+        this.customerCapacity = customerCapacity;
     }
 
     @OneToMany(mappedBy = "paddock", fetch = FetchType.EAGER)
@@ -138,7 +149,7 @@ public class Paddock {
     }
 
     public void addToPaddock(Dinosaur dinosaur){
-        if(species == dinosaur.getSpecies() && paddockSize() < capacity) {
+        if(species == dinosaur.getSpecies() && paddockSize() < dinoCapacity) {
             dinosaurs.add(dinosaur);
         }
     }
@@ -164,4 +175,17 @@ public class Paddock {
         dinosaur.setPaddock(paddock2);
         paddock2.addToPaddock(dinosaur);
     }
+
+    public void generateCustomers(){
+        if (paddockState == PaddockState.ROAMING || paddockState == PaddockState.EATING || paddockState == PaddockState.CALM) {
+            Random rn = new Random();
+            int custCount = rn.nextInt(10) + 1;
+            do {
+                customerCount += custCount;
+            } while (customerCount <= customerCapacity);
+        } else if(paddockState == PaddockState.RAMPAGE || paddockState == PaddockState.SLEEPING){
+            customerCount = 0;
+        }
+    }
+
 }
