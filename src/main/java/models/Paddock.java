@@ -72,7 +72,7 @@ public class Paddock {
         this.capacity = capacity;
     }
 
-    @Column(name = "customerCount")
+    @Column(name = "customer_count")
     public int getCustomerCount() {
         return customerCount;
     }
@@ -81,7 +81,7 @@ public class Paddock {
         this.customerCount = customerCount;
     }
 
-    @OneToMany(mappedBy = "paddock")
+    @OneToMany(mappedBy = "paddock", fetch = FetchType.EAGER)
     public ArrayList<Dinosaur> getDinosaurs() {
         return dinosaurs;
     }
@@ -90,7 +90,7 @@ public class Paddock {
         this.dinosaurs = dinosaurs;
     }
 
-    @Column(name = "paddockState")
+    @Column(name = "paddock_state")
     public PaddockState getPaddockState() {
         return paddockState;
     }
@@ -127,6 +127,7 @@ public class Paddock {
         return random;
     }
 
+    @Transient
     public PaddockState getState(){
         int index = getRandomState();
         return getStateAtIndex(index);
@@ -160,7 +161,7 @@ public class Paddock {
 
     public void transferDino(Dinosaur dinosaur, Paddock paddock1, Paddock paddock2){
         paddock1.removeDino(dinosaur);
-        dinosaur.setLocation(paddock2.location);
+        dinosaur.setPaddock(paddock2);
         paddock2.addToPaddock(dinosaur);
     }
 }
