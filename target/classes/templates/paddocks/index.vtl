@@ -1,5 +1,5 @@
 <header>
-    <h1>Dinosaurs in $paddock.name</h1>
+    <h1>$paddock.name</h1>
 </header>
 
 <div class="card-holder">
@@ -16,10 +16,16 @@
             <strong>Fine</strong>
             #end
         </p>
+        <form action="$dino.id/feed" method="post">
+            <input type="submit" value="Feed">
+        </form>
     </div>
     #end
 </div>
 
 <div>
     <p>Visitors in paddock: $paddock.customerCount</p>
+    #if($paddock.customerCount == $paddock.customerCapacity)
+    <p class="customer-capacity">Paddock customer zone is at capacity </p>
+    #end
 </div>

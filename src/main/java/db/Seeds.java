@@ -18,7 +18,7 @@ public class Seeds {
         DBHelper.save(trexPen);
         Paddock  greatPlains = new Paddock("The Great Plains", DynoType.HERBIVORE, 10, 30, 10);
         DBHelper.save(greatPlains);
-        Paddock pettingZoo = new Paddock("Gentle Giants Petting Zoo", DynoType.HERBIVORE, 5, 10, 2);
+        Paddock pettingZoo = new Paddock("Gentle Giants Petting Zoo", DynoType.HERBIVORE, 5, 10, 10);
         DBHelper.save(pettingZoo);
         Paddock raptors = new Paddock("Raptors Enclosure", DynoType.CARNIVORE, 6, 10, 2);
         DBHelper.save(raptors);

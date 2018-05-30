@@ -17,7 +17,10 @@
              <strong>Fine</strong>
              #end
          </p>
-         <p>$dino.paddock.name</p>
+         <p>Paddock: $dino.paddock.name</p>
+         <form action="$dino.id/feed" method="post">
+             <input type="submit" value="Feed">
+         </form>
      </div>
     #end
 

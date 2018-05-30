@@ -23,6 +23,13 @@
 <section class="visitor-info">
     <div>
         <p>Visitors in park: $customers</p>
+
+        <h3>Visitor Zones at Capacity:</h3>
+        #foreach($paddock in $paddocks)
+            #if($paddock.customerCount == $paddock.customerCapacity)
+            <p>$paddock.name</p>
+            #end
+        #end
     </div>
     <div>
         map gif
