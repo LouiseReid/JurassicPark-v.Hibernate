@@ -8,8 +8,8 @@ import java.util.List;
 
 public class Seeds {
 
-//        public static void seedData(){
-         public static void main(String[] args) {
+        public static void seedData(){
+//         public static void main(String[] args) {
 
         DBHelper.deleteAll(Dinosaur.class);
         DBHelper.deleteAll(Paddock.class);

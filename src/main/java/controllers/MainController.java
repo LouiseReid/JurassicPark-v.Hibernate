@@ -20,7 +20,7 @@ public class MainController {
         Spark.staticFileLocation("/public");
         DinosaurController dinosaurController = new DinosaurController();
         PaddockController paddockController = new PaddockController();
-//        Seeds.seedData();
+        Seeds.seedData();
 
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
