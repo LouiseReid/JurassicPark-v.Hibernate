@@ -4,6 +4,7 @@ import db.DBHelper;
 import db.Seeds;
 import models.Paddock;
 import spark.ModelAndView;
+import spark.Spark;
 import spark.template.velocity.VelocityTemplateEngine;
 
 import java.util.HashMap;
@@ -16,7 +17,7 @@ import static spark.SparkBase.staticFileLocation;
 public class MainController {
 
     public static void main(String[] args) {
-        staticFileLocation("/public");
+        Spark.staticFileLocation("/public");
         DinosaurController dinosaurController = new DinosaurController();
         PaddockController paddockController = new PaddockController();
         Seeds.seedData();

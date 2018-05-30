@@ -7,8 +7,11 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
+import javax.persistence.OrderBy;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,6 +72,7 @@ public class DBHelper {
         try {
             transaction = session.beginTransaction();
             Criteria cr = session.createCriteria(classType);
+            cr.addOrder(Order.desc("id"));
             cr.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
             results = cr.list();
             transaction.commit();
@@ -142,6 +146,7 @@ public class DBHelper {
             transaction = session.beginTransaction();
             Criteria cr = session.createCriteria(Dinosaur.class);
             cr.add(Restrictions.eq("paddock", paddock));
+            cr.addOrder(Order.desc("id"));
             results = cr.list();
         } catch (HibernateException e) {
             transaction.rollback();
