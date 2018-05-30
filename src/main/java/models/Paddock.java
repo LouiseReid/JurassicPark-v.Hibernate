@@ -1,10 +1,7 @@
 package models;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.Random;
+import java.util.*;
 
 @Entity
 @Table(name = "paddocks")
@@ -16,9 +13,12 @@ public class Paddock {
     private int dinoCapacity;
     private int customerCount;
     private int customerCapacity;
-    private ArrayList<Dinosaur> dinosaurs;
-    private ArrayList<PaddockState> paddockStates;
+    private List<Dinosaur> dinosaurs;
+    private List<PaddockState> paddockStates;
     private PaddockState paddockState;
+
+    public Paddock() {
+    }
 
     public Paddock(String name, DynoType species, int dinoCapacity, int customerCapacity, int customerCount) {
         this.id = id;
@@ -27,14 +27,13 @@ public class Paddock {
         this.dinoCapacity = dinoCapacity;
         this.customerCount = customerCount;
         this.customerCapacity = customerCapacity;
-        paddockState = getState();
+        paddockState = null;
         dinosaurs = new ArrayList<>();
         paddockStates = new ArrayList<>();
         generatePaddockStates();
     }
 
-    public Paddock() {
-    }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -93,11 +92,11 @@ public class Paddock {
     }
 
     @OneToMany(mappedBy = "paddock", fetch = FetchType.EAGER)
-    public ArrayList<Dinosaur> getDinosaurs() {
+    public List<Dinosaur> getDinosaurs() {
         return dinosaurs;
     }
 
-    public void setDinosaurs(ArrayList<Dinosaur> dinosaurs) {
+    public void setDinosaurs(List<Dinosaur> dinosaurs) {
         this.dinosaurs = dinosaurs;
     }
 
@@ -111,11 +110,11 @@ public class Paddock {
     }
 
     @Transient
-    public ArrayList<PaddockState> getPaddockStates() {
+    public List<PaddockState> getPaddockStates() {
         return paddockStates;
     }
 
-    public void setPaddockStates(ArrayList<PaddockState> paddockStates) {
+    public void setPaddockStates(List<PaddockState> paddockStates) {
         this.paddockStates = paddockStates;
     }
 
@@ -123,25 +122,28 @@ public class Paddock {
         Collections.addAll(paddockStates, PaddockState.values());
     }
 
-    private int getNumStates(){
+    @Transient
+    private int gtNumStates(){
         return paddockStates.size();
     }
 
-    public PaddockState getStateAtIndex(int index){
+    @Transient
+    public PaddockState gtStateAtIndex(int index){
         return paddockStates.get(index);
     }
 
-    public int getRandomState(){
+    @Transient
+    public int gtRandomState(){
         Random rand = new Random();
-        int listSize = getNumStates();
+        int listSize = gtNumStates();
         int random = rand.nextInt(listSize);
         return random;
     }
 
     @Transient
-    public PaddockState getState(){
-        int index = getRandomState();
-        return getStateAtIndex(index);
+    public PaddockState gtState(){
+        int index = gtRandomState();
+        return gtStateAtIndex(index);
     }
 
     public int paddockSize(){
@@ -155,7 +157,7 @@ public class Paddock {
     }
 
     public void Rampage(){
-        if(paddockState == PaddockState.RAMPAGE){
+        if(paddockState == PaddockState.RAMPAGE && species == DynoType.CARNIVORE){
             dinosaurs.clear();
         }
     }

@@ -16,7 +16,7 @@ public class DBHelper {
     public static Transaction transaction;
     public static Session session;
 
-    public static void saveOrUpdate(Object object){
+    public static void save(Object object) {
         session = HibernateUtil.getSessionFactory().openSession();
         try {
             transaction = session.beginTransaction();
@@ -79,13 +79,13 @@ public class DBHelper {
         return results;
     }
 
-    public static <T> T find(Class classType, String name) {
+    public static <T> T find(Class classType, int id) {
         session = HibernateUtil.getSessionFactory().openSession();
         T result = null;
         try {
             transaction = session.beginTransaction();
             Criteria cr = session.createCriteria(classType);
-            cr.add(Restrictions.eq("name", name));
+            cr.add(Restrictions.eq("id", id));
             result = (T) cr.uniqueResult();
             transaction.commit();
         } catch (HibernateException e) {
@@ -133,10 +133,10 @@ public class DBHelper {
         return results;
     }
 
-    public static void addDinoToPaddock(Dinosaur dinosaur, Paddock paddock){
-        paddock.addToPaddock(dinosaur);
-        dinosaur.setPaddock(paddock);
-        DBHelper.saveOrUpdate(dinosaur);
-        DBHelper.saveOrUpdate(paddock);
+    public static void transferDino(Dinosaur dinosaur, Paddock paddock1, Paddock paddock2){
+        paddock1.transferDino(dinosaur, paddock1, paddock2);
+        DBHelper.save(dinosaur);
+        DBHelper.save(paddock1);
+        DBHelper.save(paddock2);
     }
 }

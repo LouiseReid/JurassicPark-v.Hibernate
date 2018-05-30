@@ -10,20 +10,24 @@ public class Dinosaur {
     private int id;
     private DynoType species;
     private String name;
+    private String breed;
     private Paddock paddock;
     private int hungerLevel;
 
 
-    public Dinosaur(DynoType species, String name, Paddock paddock, int hungerLevel) {
+    public Dinosaur() {
+    }
+
+
+    public Dinosaur(DynoType species, String breed, String name, Paddock paddock, int hungerLevel) {
         this.id = id;
         this.species = species;
+        this.breed = breed;
         this.name = name;
         this.paddock = paddock;
         this.hungerLevel = hungerLevel;
     }
 
-    public Dinosaur() {
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,6 +47,15 @@ public class Dinosaur {
 
     public void setSpecies(DynoType species) {
         this.species = species;
+    }
+
+    @Column(name = "breed")
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
     }
 
     @Column(name = "name")
