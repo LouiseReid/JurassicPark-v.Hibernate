@@ -20,21 +20,23 @@ public class Seeds {
         DBHelper.save(greatPlains);
         Paddock pettingZoo = new Paddock("Gentle Giants Petting Zoo", DynoType.HERBIVORE, 5, 10, 2);
         DBHelper.save(pettingZoo);
-        Paddock triceratops = new Paddock("Triceratops Enclosure", DynoType.CARNIVORE, 6, 10, 2);
-        DBHelper.save(triceratops);
+        Paddock raptors = new Paddock("Raptors Enclosure", DynoType.CARNIVORE, 6, 10, 2);
+        DBHelper.save(raptors);
         Paddock aviary = new Paddock("The Aviary", DynoType.HERBIVORE, 40, 20, 10);
         DBHelper.save(aviary);
+        Paddock quarentine = new Paddock("Quarentine", DynoType.HERBIVORE, 3, 0, 0);
+        DBHelper.save(quarentine);
 
         Dinosaur trex = new Dinosaur(DynoType.CARNIVORE, "T-Rex", "Rex", trexPen, 6 );
         DBHelper.save(trex);
-        Dinosaur blue = new Dinosaur(DynoType.CARNIVORE, "Velociraptor", "Blue", triceratops, 3);
+        Dinosaur blue = new Dinosaur(DynoType.CARNIVORE, "Velociraptor", "Blue", raptors, 3);
         DBHelper.save(blue);
-        Dinosaur charlie = new Dinosaur(DynoType.CARNIVORE, "Velociraptor","Charlie", triceratops, 1);
+        Dinosaur charlie = new Dinosaur(DynoType.CARNIVORE, "Velociraptor","Charlie", raptors, 1);
         DBHelper.save(charlie);
         DBHelper.save(trex);
-        Dinosaur delta = new Dinosaur(DynoType.CARNIVORE, "Velociraptor","Delta", triceratops, 2);
+        Dinosaur delta = new Dinosaur(DynoType.CARNIVORE, "Velociraptor","Delta", raptors, 2);
         DBHelper.save(delta);
-        Dinosaur echo = new Dinosaur(DynoType.CARNIVORE, "Velociraptor","Echo", triceratops, 1);
+        Dinosaur echo = new Dinosaur(DynoType.CARNIVORE, "Velociraptor","Echo", raptors, 1);
         DBHelper.save(echo);
 
         Dinosaur peter = new Dinosaur(DynoType.HERBIVORE, "Pterosaurs", "Peter", aviary, 10);
@@ -66,11 +68,16 @@ public class Seeds {
         Dinosaur jim = new Dinosaur(DynoType.HERBIVORE, "Triceratop", "Steve", pettingZoo, 6);
         DBHelper.save(jim);
 
-        Paddock paddock = DBHelper.find(Paddock.class, trexPen.getId());
+        Dinosaur gary = new Dinosaur(DynoType.HERBIVORE, "Triceratop", "Gary", quarentine, 10);
+        DBHelper.save(gary);
+
+//        Paddock paddock = DBHelper.find(Paddock.class, trexPen.getId());
 
         List<Paddock> paddockList = DBHelper.getAll(Paddock.class);
 
-        Dinosaur dinosaur = DBHelper.find(Dinosaur.class, trex.getId());
+//        Dinosaur dinosaur = DBHelper.find(Dinosaur.class, trex.getId());
+
+        int customerCount = DBHelper.customerCount();
 
     }
 }

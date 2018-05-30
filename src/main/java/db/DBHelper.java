@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DBHelper {
@@ -68,6 +69,7 @@ public class DBHelper {
         try {
             transaction = session.beginTransaction();
             Criteria cr = session.createCriteria(classType);
+            cr.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
             results = cr.list();
             transaction.commit();
         } catch (HibernateException e) {
@@ -138,5 +140,14 @@ public class DBHelper {
         DBHelper.save(dinosaur);
         DBHelper.save(paddock1);
         DBHelper.save(paddock2);
+    }
+
+    public static int customerCount(){
+        List<Paddock> paddocks = DBHelper.getAll(Paddock.class);
+        int customers = 0;
+        for(Paddock paddock : paddocks){
+            customers += paddock.getCustomerCount();
+        }
+        return customers;
     }
 }
