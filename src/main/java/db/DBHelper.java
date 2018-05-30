@@ -135,6 +135,24 @@ public class DBHelper {
         return results;
     }
 
+    public static List<Dinosaur> dinosaursInPaddock(Paddock paddock){
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Dinosaur> results = null;
+        try {
+            transaction = session.beginTransaction();
+            Criteria cr = session.createCriteria(Dinosaur.class);
+            cr.add(Restrictions.eq("paddock", paddock));
+            results = cr.list();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return results;
+    }
+
+
     public static void transferDino(Dinosaur dinosaur, Paddock paddock1, Paddock paddock2){
         paddock1.transferDino(dinosaur, paddock1, paddock2);
         DBHelper.save(dinosaur);

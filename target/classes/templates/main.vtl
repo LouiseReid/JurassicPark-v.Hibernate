@@ -12,13 +12,12 @@
 
 <div class="main">
 
-<section class="pens">
-    <a href="/Tyrannosaur-Enclosure" class="button">Tyrannosaur Enclosure</a>
-    <a href="/Raptors-Enclosure" class="button">Raptors Enclosure</a>
-    <a href="/The-Great-Plains" class="button">The Great Plains</a>
-    <a href="/Petting-Zoo" class="button">Petting-Zoo</a>
-    <a href="/Aviary" class="button">The Aviary</a>
-    <a href="/Quarentine" class="button">Quarentine</a>
+<section class="paddocks">
+    #foreach($paddock in $paddocks)
+    <form action="$paddock.id" method="get">
+        <input type="submit" value="$paddock.name">
+    </form>
+    #end
 </section>
 
 <section class="visitor-info">

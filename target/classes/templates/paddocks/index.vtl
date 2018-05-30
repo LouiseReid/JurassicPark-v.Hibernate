@@ -1,0 +1,25 @@
+<header>
+    <h1>Dinosaurs in $paddock.name</h1>
+</header>
+
+<div class="card-holder">
+    #foreach($dino in $dinosaurs)
+    <div class="card">
+        <p>$dino.name</p>
+        <p>$dino.species.description</p>
+        <p>$dino.breed</p>
+        <p>Hunger Level: #if( $dino.hungerLevel < 2 )
+            <strong>Feed Now</strong>
+            #elseif( $dino.hungerLevel >= 2 && $dino.hungerLevel < 6 )
+            <strong>Getting Hungry</strong>
+            #else
+            <strong>Fine</strong>
+            #end
+        </p>
+    </div>
+    #end
+</div>
+
+<div>
+    <p>Visitors in paddock: $paddock.customerCount</p>
+</div>
