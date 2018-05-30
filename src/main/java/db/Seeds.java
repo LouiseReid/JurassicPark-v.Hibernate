@@ -8,8 +8,8 @@ import java.util.List;
 
 public class Seeds {
 
-        public static void seedData(){
-//    public static void main(String[] args) {
+//        public static void seedData(){
+         public static void main(String[] args) {
 
         DBHelper.deleteAll(Dinosaur.class);
         DBHelper.deleteAll(Paddock.class);
@@ -71,13 +71,15 @@ public class Seeds {
         Dinosaur gary = new Dinosaur(DynoType.HERBIVORE, "Triceratop", "Gary", quarentine, 10);
         DBHelper.save(gary);
 
-//        Paddock paddock = DBHelper.find(Paddock.class, trexPen.getId());
+        Paddock paddock = DBHelper.find(Paddock.class, trexPen.getId());
 
         List<Paddock> paddockList = DBHelper.getAll(Paddock.class);
 
-//        Dinosaur dinosaur = DBHelper.find(Dinosaur.class, trex.getId());
+        Dinosaur dinosaur = DBHelper.find(Dinosaur.class, trex.getId());
 
         int customerCount = DBHelper.customerCount();
+
+        List<Paddock> paddocksForRex = DBHelper.availableTransferPaddocks(blue);
 
     }
 }

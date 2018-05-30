@@ -110,6 +110,7 @@ public class DBHelper {
             transaction = session.beginTransaction();
             Criteria cr = session.createCriteria(Paddock.class);
             cr.add(Restrictions.eq("species", dynoType));
+            cr.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
             results = cr.list();
             transaction.commit();
         } catch (HibernateException e) {
@@ -128,6 +129,7 @@ public class DBHelper {
             transaction = session.beginTransaction();
             Criteria cr = session.createCriteria(Dinosaur.class);
             cr.add(Restrictions.eq("species", dinoType));
+            cr.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
             results = cr.list();
             transaction.commit();
         } catch (HibernateException e) {
@@ -147,6 +149,26 @@ public class DBHelper {
             Criteria cr = session.createCriteria(Dinosaur.class);
             cr.add(Restrictions.eq("paddock", paddock));
             cr.addOrder(Order.desc("id"));
+            cr.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+            results = cr.list();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return results;
+    }
+
+    public static List<Paddock> availableTransferPaddocks(Dinosaur dinosaur){
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<Paddock> results = null;
+        try {
+            transaction = session.beginTransaction();
+            Criteria cr = session.createCriteria(Paddock.class);
+            cr.add(Restrictions.eq("species", dinosaur.getSpecies()));
+            cr.add(Restrictions.ne("name", dinosaur.getPaddock().getName()));
+            cr.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
             results = cr.list();
         } catch (HibernateException e) {
             transaction.rollback();
