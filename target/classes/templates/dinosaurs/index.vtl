@@ -1,30 +1,34 @@
-<header>
-    <h1>All Dinosaurs</h1>
+<header class="page-header">
+    All Dinosaurs
 </header>
 
-<div class="card-holder">
+<div class="card-container">
 
     #foreach($dino in $dinosaurs)
-     <div class="card">
-         <p>$dino.name</p>
-         <p>$dino.species.description</p>
-         <p>$dino.breed</p>
-         <p>Hunger Level: #if( $dino.hungerLevel < 2 )
-             <strong>Feed Now</strong>
-             #elseif( $dino.hungerLevel >= 2 && $dino.hungerLevel < 6 )
-             <strong>Getting Hungry</strong>
-             #else
-             <strong>Fine</strong>
-             #end
-         </p>
-         <p>Paddock: $dino.paddock.name</p>
-         <form action="$dino.id/feed" method="post">
-             <input type="submit" value="Feed">
-         </form>
-         <form action="$dino.id/transfer_options" method="get">
-             <input type="submit" value="Transfer">
-         </form>
-     </div>
+    <div class="card-content">
+        <p>$dino.name</p>
+        <p>$dino.species.description</p>
+        <p>$dino.breed</p>
+        <p>Hunger Level: #if( $dino.hungerLevel < 2 )
+            <strong>Feed Now</strong>
+            #elseif( $dino.hungerLevel >= 2 && $dino.hungerLevel < 6 )
+            <strong>Getting Hungry</strong>
+            #else
+            <strong>Fine</strong>
+            #end
+        </p>
+        <p>Paddock: $dino.paddock.name</p>
+        <div class="dino-action-btns">
+            <form action="$dino.id/feed" method="post">
+                <input type="submit" value="Feed">
+            </form>
+            <form action="$dino.id/transfer_options" method="get">
+                <input type="submit" value="Transfer">
+            </form>
+        </div>
+    </div>
     #end
 
 </div>
+
+

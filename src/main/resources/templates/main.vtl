@@ -1,26 +1,29 @@
-<marquee
+<marquee scrollamount="5">
+    Have a fantastic day workers! &nbsp;&nbsp;&nbsp;
+    Happy dinosaurs equals happy customers! &nbsp;&nbsp;&nbsp;
+    Today's weather forecast: <img id="sun" src="/sun.png"> &nbsp;&nbsp;&nbsp;
 
-        direction="left"
-        scrollamount="1"
-        behavior="scroll"
-        width="100%"
-        height="100px"
-
->
-    Have a fantastic day workers!
 </marquee>
 
 <div class="main">
 
-<section class="paddocks">
-    #foreach($paddock in $paddocks)
-    <form action="/$paddock.id/details" method="get">
-        <input type="submit" value="$paddock.name">
-    </form>
-    #end
-    <form action="/paddock/new" method="get">
-        <input type="submit" value="Create New Paddock">
-    </form>
+<section class="paddock-details">
+
+    <div class="paddock-links">
+        #foreach($paddock in $paddocks)
+        <form action="/$paddock.id/details" method="get">
+            <input type="submit" value="$paddock.name">
+        </form>
+        #end
+        <form action="/paddock/new" method="get">
+            <input type="submit" value="Create New Paddock">
+        </form>
+    </div>
+
+    <div>
+        <img src="/map.gif">
+    </div>
+
 </section>
 
 <section class="visitor-info">

@@ -18,6 +18,7 @@ import static spark.SparkBase.staticFileLocation;
 public class MainController {
 
     public static void main(String[] args) {
+        staticFileLocation("/public");
         DinosaurController dinosaurController = new DinosaurController();
         PaddockController paddockController = new PaddockController();
         Seeds.seedData();
