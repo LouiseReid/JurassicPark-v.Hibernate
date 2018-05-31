@@ -24,8 +24,8 @@ public class Seeds {
         DBHelper.save(raptors);
         Paddock aviary = new Paddock("The Aviary", DynoType.HERBIVORE, 40, 20, 10);
         DBHelper.save(aviary);
-        Paddock quarentine = new Paddock("Quarentine", DynoType.HERBIVORE, 3, 0, 0);
-        DBHelper.save(quarentine);
+        Paddock valleys = new Paddock("The Valleys", DynoType.HERBIVORE, 35, 20, 0);
+        DBHelper.save(valleys);
 
         Dinosaur trex = new Dinosaur(DynoType.CARNIVORE, "T-Rex", "Rex", trexPen, 6 );
         DBHelper.save(trex);
@@ -68,7 +68,7 @@ public class Seeds {
         Dinosaur jim = new Dinosaur(DynoType.HERBIVORE, "Triceratop", "Steve", pettingZoo, 6);
         DBHelper.save(jim);
 
-        Dinosaur gary = new Dinosaur(DynoType.HERBIVORE, "Triceratop", "Gary", quarentine, 10);
+        Dinosaur gary = new Dinosaur(DynoType.HERBIVORE, "Triceratop", "Gary", valleys, 10);
         DBHelper.save(gary);
 
         Paddock paddock = DBHelper.find(Paddock.class, trexPen.getId());

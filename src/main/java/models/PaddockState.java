@@ -2,11 +2,11 @@ package models;
 
 public enum PaddockState {
 
-    RAMPAGE("Rampage"),
-    CALM("Calm"),
-    SLEEPING("Sleeping"),
-    EATING("Eating"),
-    ROAMING("Roaming");
+    RAMPAGE("Rampaging"),
+    CALM("calm"),
+    SLEEPING("sleeping"),
+    EATING("eating"),
+    ROAMING("roaming");
 
     private String description;
 

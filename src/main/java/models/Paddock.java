@@ -27,7 +27,7 @@ public class Paddock {
         this.dinoCapacity = dinoCapacity;
         this.customerCount = customerCount;
         this.customerCapacity = customerCapacity;
-        paddockState = null;
+        paddockState = PaddockState.CALM;
         dinosaurs = new ArrayList<>();
         paddockStates = new ArrayList<>();
         generatePaddockStates();

@@ -2,6 +2,12 @@
     <h1>$paddock.name</h1>
 </header>
 
+<p>Dinosaurs in paddock are currently $paddock.paddockState.description</p>
+
+#if($dinosaurs.size() == 0)
+There are currently no dinosaurs in this enclosure
+#end
+
 <div class="card-holder">
     #foreach($dino in $dinosaurs)
     <div class="card">

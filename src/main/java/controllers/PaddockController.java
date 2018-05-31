@@ -23,6 +23,8 @@ public class PaddockController {
             String strId = req.params(":id");
             Integer intId = Integer.parseInt(strId);
             Paddock paddock = DBHelper.find(Paddock.class, intId);
+            paddock.generateCustomers();
+            DBHelper.save(paddock);
             HashMap<String, Object> model = new HashMap<>();
             List<Dinosaur> dinosaurs = DBHelper.dinosaursInPaddock(paddock);
             model.put("dinosaurs", dinosaurs);
