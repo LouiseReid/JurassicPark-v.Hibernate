@@ -25,12 +25,16 @@ public class MainController {
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int customers = DBHelper.customerCount();
-            DBHelper dbHelper = new DBHelper();
             List<Paddock> paddocks = DBHelper.getAll(Paddock.class);
-            model.put("dbhelper", dbHelper);
             model.put("paddocks", paddocks);
             model.put("customers", customers);
             model.put("template","templates/main.vtl");
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, new VelocityTemplateEngine());
+
+        get("/lockdown", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("template","templates/lockdown.vtl");
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
 

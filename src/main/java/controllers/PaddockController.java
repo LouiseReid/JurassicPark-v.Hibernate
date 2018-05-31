@@ -22,8 +22,7 @@ public class PaddockController {
 
     private void setUpEndPoints(){
 
-
-        get("/:id", (req, res) -> {
+        get("/:id/details", (req, res) -> {
             String strId = req.params(":id");
             Integer intId = Integer.parseInt(strId);
             Paddock paddock = DBHelper.find(Paddock.class, intId);
@@ -58,7 +57,6 @@ public class PaddockController {
             res.redirect("/");
             return null;
         }, new VelocityTemplateEngine());
-
 
 
     }

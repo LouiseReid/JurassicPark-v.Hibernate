@@ -14,7 +14,7 @@
 
 <section class="paddocks">
     #foreach($paddock in $paddocks)
-    <form action="$paddock.id" method="get">
+    <form action="/$paddock.id/details" method="get">
         <input type="submit" value="$paddock.name">
     </form>
     #end
