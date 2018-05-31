@@ -3,7 +3,9 @@ package db;
 import models.Dinosaur;
 import models.DynoType;
 import models.Paddock;
+import models.PaddockState;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Seeds {
@@ -13,6 +15,7 @@ public class Seeds {
 
         DBHelper.deleteAll(Dinosaur.class);
         DBHelper.deleteAll(Paddock.class);
+
 
         Paddock trexPen = new Paddock("Tyrannosaur Enclosure", DynoType.CARNIVORE, 2, 10, 3);
         DBHelper.save(trexPen);
@@ -80,6 +83,8 @@ public class Seeds {
         int customerCount = DBHelper.customerCount();
 
         List<Paddock> paddocksForRex = DBHelper.availableTransferPaddocks(blue);
+
+
 
     }
 }

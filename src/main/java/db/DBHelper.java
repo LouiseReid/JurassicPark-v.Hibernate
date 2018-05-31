@@ -3,6 +3,7 @@ package db;
 import models.Dinosaur;
 import models.DynoType;
 import models.Paddock;
+import models.PaddockState;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -13,6 +14,7 @@ import org.hibernate.criterion.Restrictions;
 
 import javax.persistence.OrderBy;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DBHelper {
@@ -195,4 +197,13 @@ public class DBHelper {
         }
         return customers;
     }
+
+    public static void generateNewState(Paddock paddock){
+        List<PaddockState> paddockStates = new ArrayList<>();
+        Collections.addAll(paddockStates, PaddockState.values());
+        Collections.shuffle(paddockStates);
+        paddock.setPaddockState(paddockStates.get(0));
+        DBHelper.save(paddock);
+    }
+
 }

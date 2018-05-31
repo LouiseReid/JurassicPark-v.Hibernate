@@ -25,6 +25,7 @@ public class PaddockController {
             Paddock paddock = DBHelper.find(Paddock.class, intId);
             paddock.generateCustomers();
             DBHelper.save(paddock);
+            DBHelper.generateNewState(paddock);
             HashMap<String, Object> model = new HashMap<>();
             List<Dinosaur> dinosaurs = DBHelper.dinosaursInPaddock(paddock);
             model.put("dinosaurs", dinosaurs);

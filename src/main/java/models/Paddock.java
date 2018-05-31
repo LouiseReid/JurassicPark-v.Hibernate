@@ -14,7 +14,6 @@ public class Paddock {
     private int customerCount;
     private int customerCapacity;
     private List<Dinosaur> dinosaurs;
-    private List<PaddockState> paddockStates;
     private PaddockState paddockState;
 
     public Paddock() {
@@ -29,8 +28,6 @@ public class Paddock {
         this.customerCapacity = customerCapacity;
         paddockState = PaddockState.CALM;
         dinosaurs = new ArrayList<>();
-        paddockStates = new ArrayList<>();
-        generatePaddockStates();
     }
 
 
@@ -107,43 +104,6 @@ public class Paddock {
 
     public void setPaddockState(PaddockState paddockState) {
         this.paddockState = paddockState;
-    }
-
-    @Transient
-    public List<PaddockState> getPaddockStates() {
-        return paddockStates;
-    }
-
-    public void setPaddockStates(List<PaddockState> paddockStates) {
-        this.paddockStates = paddockStates;
-    }
-
-    private void generatePaddockStates(){
-        Collections.addAll(paddockStates, PaddockState.values());
-    }
-
-    @Transient
-    private int gtNumStates(){
-        return paddockStates.size();
-    }
-
-    @Transient
-    public PaddockState gtStateAtIndex(int index){
-        return paddockStates.get(index);
-    }
-
-    @Transient
-    public int gtRandomState(){
-        Random rand = new Random();
-        int listSize = gtNumStates();
-        int random = rand.nextInt(listSize);
-        return random;
-    }
-
-    @Transient
-    public PaddockState gtState(){
-        int index = gtRandomState();
-        return gtStateAtIndex(index);
     }
 
     public int paddockSize(){

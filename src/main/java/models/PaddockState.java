@@ -1,5 +1,8 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum PaddockState {
 
     RAMPAGE("Rampaging"),
@@ -17,4 +20,6 @@ public enum PaddockState {
     public String getDescription() {
         return description;
     }
+
+
 }
