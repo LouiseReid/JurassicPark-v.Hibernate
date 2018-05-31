@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.get;
+import static spark.Spark.post;
 import static spark.SparkBase.staticFileLocation;
 
 public class MainController {
@@ -24,11 +25,20 @@ public class MainController {
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int customers = DBHelper.customerCount();
+            DBHelper dbHelper = new DBHelper();
             List<Paddock> paddocks = DBHelper.getAll(Paddock.class);
+            model.put("dbhelper", dbHelper);
             model.put("paddocks", paddocks);
             model.put("customers", customers);
             model.put("template","templates/main.vtl");
             return new ModelAndView(model, "templates/layout.vtl");
         }, new VelocityTemplateEngine());
+
+        post("/lockdown", (req, res) -> {
+            DBHelper.lockdownPark();
+            res.redirect("/lockdown");
+            return null;
+        }, new VelocityTemplateEngine());
+
     }
 }

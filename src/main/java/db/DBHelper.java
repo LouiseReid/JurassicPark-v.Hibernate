@@ -212,4 +212,12 @@ public class DBHelper {
         return dynoTypes;
     }
 
+    public static void lockdownPark(){
+        List<Paddock> paddocks = DBHelper.getAll(Paddock.class);
+        for(Paddock paddock : paddocks){
+            paddock.lockdown();
+            DBHelper.save(paddock);
+        }
+    }
+
 }

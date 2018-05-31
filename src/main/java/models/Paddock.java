@@ -116,11 +116,9 @@ public class Paddock {
         }
     }
 
-//    public boolean Rampage(){
-//       if(paddockState == PaddockState.RAMPAGE && species == DynoType.CARNIVORE){
-//           return true;
-//       }
-//    }
+    public boolean rampage(){
+       return paddockState == PaddockState.RAMPAGE;
+    }
 
     public void removeDino(Dinosaur dinosaur){
         Iterator itr = dinosaurs.iterator();
@@ -150,6 +148,10 @@ public class Paddock {
 
     public void loseCustomers(){
         customerCount -= 3;
+    }
+
+    public void lockdown(){
+        customerCount = 0;
     }
 
 }

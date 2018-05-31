@@ -40,6 +40,17 @@
     <div>
     </div>
 
+    <div>
+        #foreach($paddock in $paddocks)
+            #if($paddock.rampage())
+            <p>Rampaging dinosaurs in $paddock.name!!!</p>
+            <form action="/lockdown" method="post">
+                <input type="submit" value="Lock Down">
+            </form>
+            #end
+        #end
+    </div>
+
 </section>
 
 </div>
