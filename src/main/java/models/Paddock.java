@@ -116,11 +116,11 @@ public class Paddock {
         }
     }
 
-    public void Rampage(){
-        if(paddockState == PaddockState.RAMPAGE && species == DynoType.CARNIVORE){
-            dinosaurs.clear();
-        }
-    }
+//    public boolean Rampage(){
+//       if(paddockState == PaddockState.RAMPAGE && species == DynoType.CARNIVORE){
+//           return true;
+//       }
+//    }
 
     public void removeDino(Dinosaur dinosaur){
         Iterator itr = dinosaurs.iterator();
@@ -138,16 +138,18 @@ public class Paddock {
         paddock2.addToPaddock(dinosaur);
     }
 
+    public boolean atCapacity(){
+        return customerCount == customerCapacity;
+    }
+
     public void generateCustomers(){
-        if (paddockState == PaddockState.ROAMING || paddockState == PaddockState.EATING || paddockState == PaddockState.CALM) {
-            Random rn = new Random();
-            int custCount = rn.nextInt(10) + 1;
-            do {
-                customerCount += custCount;
-            } while (customerCount <= customerCapacity);
-        } else if(paddockState == PaddockState.RAMPAGE || paddockState == PaddockState.SLEEPING){
-            customerCount = 0;
+        if (paddockState != PaddockState.RAMPAGE && !atCapacity()){
+                customerCount += 2;
         }
+    }
+
+    public void loseCustomers(){
+        customerCount -= 3;
     }
 
 }

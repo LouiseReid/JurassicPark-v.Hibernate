@@ -18,6 +18,9 @@
         <input type="submit" value="$paddock.name">
     </form>
     #end
+    <form action="/paddock/new" method="get">
+        <input type="submit" value="Create New Paddock">
+    </form>
 </section>
 
 <section class="visitor-info">
@@ -28,6 +31,7 @@
         #foreach($paddock in $paddocks)
             #if($paddock.customerCount == $paddock.customerCapacity)
             <p>$paddock.name</p>
+
             #end
         #end
 

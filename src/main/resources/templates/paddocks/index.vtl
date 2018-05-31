@@ -2,7 +2,9 @@
     <h1>$paddock.name</h1>
 </header>
 
+#if($dinosaurs.size() > 1)
 <p>Dinosaurs in paddock are currently $paddock.paddockState.description</p>
+#end
 
 #if($dinosaurs.size() == 0)
 There are currently no dinosaurs in this enclosure

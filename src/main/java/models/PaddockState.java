@@ -9,6 +9,12 @@ public enum PaddockState {
     CALM("calm"),
     SLEEPING("sleeping"),
     EATING("eating"),
+    BATHING("bathing"),
+    GRAZING("grazing"),
+    DOZING("dozing"),
+    CHARGING("charging"),
+    STROLLING("strolling"),
+    NAPPING("napping"),
     ROAMING("roaming");
 
     private String description;

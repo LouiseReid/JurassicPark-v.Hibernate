@@ -206,4 +206,10 @@ public class DBHelper {
         DBHelper.save(paddock);
     }
 
+    public static List<DynoType> allSpecies(){
+        List<DynoType> dynoTypes = new ArrayList<>();
+        Collections.addAll(dynoTypes, DynoType.values());
+        return dynoTypes;
+    }
+
 }

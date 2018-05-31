@@ -1,0 +1,22 @@
+<p>Create New Paddock</p>
+
+<form action="/paddocks" method="post">
+    <label for="name">Name:</label>
+    <input  id="name" class="inputbox" type="text" name="name" required>
+
+    <label for="species">Species:</label>
+    <select id="species" name="species">
+        #foreach($species in $species)
+        <option value="$species">$species.description</option>
+        #end
+    </select>
+
+    <label for="dinoCapacity">Dinosaur Capacity:</label>
+    <input id="dinoCapacity" class="inputbox" type="number" name="dinoCapacity" required>
+
+    <label for="customerCapacity">Customer Capacity:</label>
+    <input id="customerCapacity" class="inputbox" type="number" name="customerCapacity" required>
+
+    <input type="submit" value="Save" class="button">
+
+</form>
