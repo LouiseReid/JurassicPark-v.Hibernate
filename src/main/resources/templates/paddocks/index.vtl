@@ -1,5 +1,5 @@
-<header>
-    <h1>$paddock.name</h1>
+<header class="page-header">
+    $paddock.name
 </header>
 
 #if($dinosaurs.size() > 1)
@@ -24,10 +24,10 @@ There are currently no dinosaurs in this enclosure
             <strong>Fine</strong>
             #end
         </p>
-        <form action="$dino.id/feed" method="post">
+        <form action="/$paddock.id/$dino.id/feed" method="post">
             <input type="submit" value="Feed">
         </form>
-        <form action="$dino.id/transfer_options" method="get">
+        <form action="/$paddock.id/$dino.id/transfer_options" method="get">
             <input type="submit" value="Transfer">
         </form>
     </div>

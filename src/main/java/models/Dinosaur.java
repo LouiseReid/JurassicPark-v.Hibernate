@@ -87,9 +87,7 @@ public class Dinosaur {
     }
 
     public void feed(){
-        Random rn = new Random();
-        int foodCount = rn.nextInt(5) + 1;
-        hungerLevel += foodCount;
+        hungerLevel += 2;
     }
 
     public boolean checkHungry(){

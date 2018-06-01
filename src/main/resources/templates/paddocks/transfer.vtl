@@ -1,0 +1,20 @@
+<p>Currently in: $dinosaur.paddock.name</p>
+
+
+<p>Transfer options for $dinosaur.name the $dinosaur.breed:</p>
+
+#foreach($paddock in $paddocks)
+<p>$paddock.name</p>
+#end
+
+<form action="/$paddock.id/$dinosaur.id/transfer" method="post">
+
+    <label for="paddock">Transfer To:</label>
+    <select id="paddock" name="paddock">
+        #foreach($paddock in $paddocks)
+        <option value="$paddock.id">$paddock.name</option>
+        #end
+    </select>
+
+    <input type="submit" value="Transfer">
+</form>

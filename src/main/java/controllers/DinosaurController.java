@@ -31,7 +31,7 @@ public class DinosaurController {
         post("/:id/feed", (req, res) -> {
             String strId = req.params(":id");
             Integer intId = Integer.parseInt(strId);
-            Dinosaur dinosaur = DBHelper.find(Dinosaur.class,intId);
+            Dinosaur dinosaur = DBHelper.find(Dinosaur.class, intId);
             dinosaur.feed();
             DBHelper.save(dinosaur);
             res.redirect(req.headers("referer"));

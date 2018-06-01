@@ -58,6 +58,40 @@ public class PaddockController {
             return null;
         }, new VelocityTemplateEngine());
 
+        post("/:id/:id2/feed", (req, res) -> {
+            String strId = req.params(":id2");
+            Integer intId = Integer.parseInt(strId);
+            Dinosaur dinosaur = DBHelper.find(Dinosaur.class, intId);
+            dinosaur.feed();
+            DBHelper.save(dinosaur);
+            res.redirect(req.headers("referer"));
+            return null;
+        }, new VelocityTemplateEngine());
+
+        post(":id/:id2/transfer", (req, res) -> {
+            String strId = req.params(":id2");
+            Integer intId = Integer.parseInt(strId);
+            Dinosaur dinosaur = DBHelper.find(Dinosaur.class,intId);
+            Paddock currentPaddock = dinosaur.getPaddock();
+            Integer paddockId = Integer.parseInt(req.queryParams("paddock"));
+            Paddock newPaddock = DBHelper.find(Paddock.class,paddockId);
+            DBHelper.transferDino(dinosaur, currentPaddock, newPaddock);
+            res.redirect(req.headers("referer"));
+            return null;
+        }, new VelocityTemplateEngine());
+
+        get("/:id/:id2/transfer_options", (req, res) -> {
+            String strId = req.params(":id2");
+            Integer intId = Integer.parseInt(strId);
+            Dinosaur dinosaur = DBHelper.find(Dinosaur.class,intId);
+            List<Paddock> paddocks = DBHelper.availableTransferPaddocks(dinosaur);
+            HashMap<String, Object> model = new HashMap<>();
+            model.put("dinosaur", dinosaur);
+            model.put("paddocks", paddocks);
+            model.put("template", "templates/paddocks/transfer.vtl");
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, new VelocityTemplateEngine());
+
 
     }
 

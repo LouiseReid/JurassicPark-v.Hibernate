@@ -9,6 +9,10 @@
   src: url("/pirulenrg.ttf");
 }
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0 auto;
   background: -webkit-radial-gradient(center, circle, rgba(255,255,255,.35), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 21%), -webkit-radial-gradient(center, circle, rgba(0,0,0,.2), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
@@ -24,14 +28,39 @@ font-family: pirulen;
 }
 
 
-
-
-#lockdown {
-  background-image: url("lockdown.jpg");
-  background-size: cover;
-  height: 100vh;
-  margin: 0;
+.main {
+  display: flex;
+  height: 100%
 }
+
+.paddock-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 50%;
+  margin: 5px;
+  flex: 1
+}
+
+.paddock-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.paddock-links input[type=submit] {
+  font-family: pirulen;
+  width: 250px;
+  height: 50px;
+  margin: 10px;
+}
+
+#map {
+  align-self: center;
+  margin-top: 70px
+}
+
+
 
 marquee {
   font-family: jurassicpark;
@@ -79,7 +108,6 @@ marquee {
     margin: 2px;
     padding:5px 15px;
     background:#ccc;
-    cursor:pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px;
     font-family: pirulen;
@@ -87,4 +115,12 @@ marquee {
 
 .dino-action-btns {
   display: inline-flex;
+}
+
+
+#lockdown {
+  background-image: url("lockdown.jpg");
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
 }
