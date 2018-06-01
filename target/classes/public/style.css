@@ -1,7 +1,7 @@
 @font-face {
-    font-family: jurassicpark;
-    src: url("/JurassicPark.ttf");
-    font-weight: lighter;
+  font-family: jurassicpark;
+  src: url("/JurassicPark.ttf");
+  font-weight: lighter;
 }
 
 @font-face {
@@ -16,15 +16,28 @@ html {
 body {
   margin: 0 auto;
   background: -webkit-radial-gradient(center, circle, rgba(255,255,255,.35), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 21%), -webkit-radial-gradient(center, circle, rgba(0,0,0,.2), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
-background: -moz-radial-gradient(center, circle, rgba(255,255,255,.35), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 21%), -webkit-radial-gradient(center, circle, rgba(0,0,0,.2), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
-background: -ms-radial-gradient(center, circle, rgba(255,255,255,.35), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 21%), -webkit-radial-gradient(center, circle, rgba(0,0,0,.2), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
-background: -o-radial-gradient(center, circle, rgba(255,255,255,.35), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 21%), -webkit-radial-gradient(center, circle, rgba(0,0,0,.2), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
-background: radial-gradient(center, circle, rgba(255,255,255,.35), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 21%), -webkit-radial-gradient(center, circle, rgba(0,0,0,.2), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
-background-size: 10px 10px, 10px 10px, 100% 100%;
-background-position: 1px 1px, 0px 0px, center center;
+  background: -moz-radial-gradient(center, circle, rgba(255,255,255,.35), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 21%), -webkit-radial-gradient(center, circle, rgba(0,0,0,.2), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
+  background: -ms-radial-gradient(center, circle, rgba(255,255,255,.35), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 21%), -webkit-radial-gradient(center, circle, rgba(0,0,0,.2), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
+  background: -o-radial-gradient(center, circle, rgba(255,255,255,.35), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 21%), -webkit-radial-gradient(center, circle, rgba(0,0,0,.2), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
+  background: radial-gradient(center, circle, rgba(255,255,255,.35), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 21%), -webkit-radial-gradient(center, circle, rgba(0,0,0,.2), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
+  background-size: 10px 10px, 10px 10px, 100% 100%;
+  background-position: 1px 1px, 0px 0px, center center;
 
-top: 0;
-font-family: pirulen;
+  top: 0;
+  font-family: pirulen;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+
 }
 
 
@@ -72,7 +85,7 @@ marquee {
 }
 
 #sun {
-   width: 20px;
+  width: 20px;
 }
 
 .page-header {
@@ -105,16 +118,20 @@ marquee {
 }
 
 .card-content input[type=submit] {
-    margin: 2px;
-    padding:5px 15px;
-    background:#ccc;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    font-family: pirulen;
+  margin: 2px;
+  padding:5px 15px;
+  background:#ccc;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-family: pirulen;
 }
 
 .dino-action-btns {
   display: inline-flex;
+}
+
+#rampaging {
+  background:
 }
 
 
@@ -123,4 +140,25 @@ marquee {
   background-size: cover;
   height: 100vh;
   margin: 0;
+}
+
+#lockdown-btn input[type=submit] {
+  background: red;
+  font-family: pirulen;
+  padding:5px 15px;
+  height: 60px;
+  width: 240px;
+
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1;
+}
+
+.visitor-numbers {
+  align-self: center;
+  margin-bottom: 50px;
 }

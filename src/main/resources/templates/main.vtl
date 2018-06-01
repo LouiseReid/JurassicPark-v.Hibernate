@@ -17,9 +17,9 @@
         #end
     </div>
 
-    <form action="/paddock/new" method="get">
-        <input type="submit" value="Create New Paddock">
-    </form>
+    <!--<form action="/paddock/new" method="get">-->
+        <!--<input type="submit" value="Create New Paddock">-->
+    <!--</form>-->
 
     <div id="map">
         <img src="/map.gif">
@@ -27,9 +27,9 @@
 
 </section>
 
-<section class="visitor-info">
-    <div>
-        <p>Visitors in park: $customers</p>
+<section class="info-section">
+    <div class="visitor-info">
+        <p class="visitor-numbers">Visitors in park: $customers</p>
 
         <h3>Visitor Zones at Capacity:</h3>
         #foreach($paddock in $paddocks)
@@ -47,9 +47,9 @@
     <div>
         #foreach($paddock in $paddocks)
             #if($paddock.rampage())
-            <p>Rampaging dinosaurs in $paddock.name!!!</p>
-            <form action="/lockdown" method="post">
-                <input type="submit" value="Lock Down">
+            <p id="rampaging">Rampaging dinosaurs in $paddock.name!!!</p>
+            <form id="lockdown-btn" action="/lockdown" method="post">
+                <input type="submit" value="LOCK DOWN PARK!!" >
             </form>
             #end
         #end

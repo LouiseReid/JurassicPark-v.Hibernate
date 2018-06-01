@@ -2,7 +2,7 @@
     $paddock.name
 </header>
 
-#if($dinosaurs.size() > 1)
+#if($dinosaurs.size() > 0)
 <p>Dinosaurs in paddock are currently $paddock.paddockState.description</p>
 #end
 
@@ -10,7 +10,7 @@
 There are currently no dinosaurs in this enclosure
 #end
 
-<div class="card">
+<div class="card-container">
     #foreach($dino in $dinosaurs)
     <div class="card-content">
         <p>$dino.name</p>
